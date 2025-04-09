@@ -1240,7 +1240,7 @@ body.greyscale{
         /* max-width: 1080px; */
     }
     .btn_hp_making{
-        bottom: -35px;
+        bottom: 0;
         left: 0;
         padding: 8px 0;
         width: 150px;
@@ -1352,6 +1352,7 @@ body.greyscale{
 
     .video_section {
         min-height: 100vh;
+        height:calc(var(--vh, 1vh) * 100);
     }
     .video_section .vd_txt_box {
         display: flex;
@@ -1373,7 +1374,7 @@ body.greyscale{
     }
     .video_section .vd_txt_box p{ 
         margin: 0 auto;
-        width: 40%;
+        width: 50%;
         text-align: center;
         padding: 10px 10px 0;
         font-size: 12px;
@@ -1424,12 +1425,22 @@ body.greyscale{
         width: 94% !important;
     }
     .service_section .r_cont .swiper-slide .tit {
-        padding: 0 0 30px;
+        padding: 0 0 25px;
+        line-height: 1.3;
         font-size: 24px;
+        word-break: keep-all;
+    }
+    .service_section .r_cont .swiper-slide .tit br{
+        display: none;
     }
     .service_section .r_cont .swiper-slide .txt_list li {
-        padding: 0 0 6px 10px;
+        padding: 0 0 8px 10px;
+        line-height: 1.3;
         font-size: 14px;
+        word-break: keep-all;
+    }
+    .service_section .r_cont .swiper-slide .txt_list li::before{
+        top: 6px;
     }
     .service_section .r_cont .swiper-slide .btn_go_service{
         margin-top: auto;
@@ -1441,6 +1452,14 @@ body.greyscale{
 
 
 
+
+    .ourway_section .set1_conts .txts{
+        padding: 0;
+    }
+
+    .ourway_section .set1_conts .txts h2{
+        /* padding: 0; */
+    }
     .ourway_section .set1_conts .txts p{
         font-size: 24px;
     }
@@ -1448,7 +1467,9 @@ body.greyscale{
         padding: 40px 0;
         font-size: 32px;
     }
-
+    .ourway_section .set1_conts .txts p.first{
+        padding: 40px 0 0;
+    }
 
 
 
@@ -1466,8 +1487,9 @@ body.greyscale{
 
     .green_section h3 {
         margin: 0 auto;
-        width: 80%;
+        width: 75%;
         padding: 0 0 25px 0;
+        line-height: 1.5;
         font-size: 24px;
         word-break: keep-all;
     }
@@ -1525,11 +1547,13 @@ body.greyscale{
         line-height: 1.4;
         font-weight: 500;
         font-size: 12px;
+        color: rgba(221,237,232,0.5);
     }
     .web_section .web_conts_box {
         padding: 80px 0 0;
     }
     .web_section .web_conts_box .web_cont h4{
+        padding: 0 0 25px 0;
         font-size: 11px;
     }
     .web_section .web_conts_box .web_cont .sub_tit {
@@ -1547,7 +1571,7 @@ body.greyscale{
         width: 100%;
     }
     .web_section .web_conts_box .web_cont.business ul li:nth-child(2){
-        margin: 0;
+        margin: 0 0 40px 0;
     }
     .web_section .web_conts_box .web_cont.business ul li dl dt{
         font-size: 20px;
@@ -1591,6 +1615,7 @@ body.greyscale{
     }
     .web_section .web_conts_box .web_cont.team ul li .t_infos .tit{
         padding: 0 0 18px 0;
+        line-height: 1.35;
         font-size: 20px;
     }
     .web_section .web_conts_box .web_cont.team ul li .t_infos .tit br{
@@ -1606,7 +1631,10 @@ body.greyscale{
     }
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dd{
         width: 100%;
-        line-height: 1.5;
+        line-height: 1.4;
+    }
+    .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dd p{
+        padding-bottom: 5px;
     }
 
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info.first {

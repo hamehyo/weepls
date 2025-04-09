@@ -7,7 +7,7 @@ $(function (){
         if($(this).hasClass("grey")){
             $(this).children("span").text("GREYSCALE");
             tl.scrollTrigger.enable();
-            //tl2.scrollTrigger.enable();
+            tl2.scrollTrigger.enable();
         }else{
             $(this).children("span").text("RGB COLOR");
             tl.scrollTrigger.disable();
@@ -35,9 +35,10 @@ $(function (){
         }else{
             $("#header").removeClass("bg");
         }
-
         serviceSwiper.update();
     });
+
+
 
     // 모바일 햄버거 메뉴
     $(".hamburger").click(function(){
@@ -49,13 +50,22 @@ $(function (){
         }
     });
 
+
+    /* MO -> height 100vh */
+    function setScreenSize() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setScreenSize();
+
+
     // our way 영역
     var tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#section_1",
             start: "top top",
             end: "+=40%",
-            scrub: true,
+            scrub: 2,
             pin: true,
             toggleActions: "restart play none reset",
             //pinSpacing: false
@@ -159,6 +169,10 @@ $(function (){
         slidesPerView : "auto",
         spaceBetween : 28,
         mousewheelControl: true,
+        autoplay : { 
+            delay : 3000, 
+            disableOnInteraction : false, 
+        },
         pagination: {
             el: '.page_scroll',
             type: 'bullets'
