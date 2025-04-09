@@ -1,26 +1,45 @@
 $(function (){
 
-    // greyscale mode
+    // 그레이스케일모드
     $(".btn_mode").on("click", function(){
         $("body").toggleClass("greyscale");
         $(this).toggleClass("grey");
         if($(this).hasClass("grey")){
             $(this).children("span").text("GREYSCALE");
+            tl.scrollTrigger.enable();
+            //tl2.scrollTrigger.enable();
         }else{
             $(this).children("span").text("RGB COLOR");
+            tl.scrollTrigger.disable();
+            tl2.scrollTrigger.disable();
         }
     });
 
+    // 홈페이지 제작안내 button
+    $(".btn_hp_making").on("click", function(e){
+        $('html, body').animate({
+            'scrollTop': $('#section_4').offset().top - $("#header").outerHeight()
+        }, 300);
+        e.preventDefault();
+    });
 
+    // 포트폴리오
+    $(".btn_portfolio").on("click", function(){
+        alert("준비중입니다.");
+    });
 
+    // 스크롤 시 해더 배경색 추가
     $(window).on("scroll", function(){
         if($(window).scrollTop()){
             $("#header").addClass("bg");
         }else{
             $("#header").removeClass("bg");
         }
+
+        serviceSwiper.update();
     });
 
+    // 모바일 햄버거 메뉴
     $(".hamburger").click(function(){
         $(this).toggleClass("is_active");
         if( $(this).hasClass("is_active") ){
@@ -30,199 +49,180 @@ $(function (){
         }
     });
 
+    // our way 영역
+    var tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#section_1",
+            start: "top top",
+            end: "+=40%",
+            scrub: true,
+            pin: true,
+            toggleActions: "restart play none reset",
+            //pinSpacing: false
+            //markers: true
+        }
+    });
+    tl.to(".txts_scroll", {
+        y: "-60%"
+    });        
 
+    // core service 영역
+/**/
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#section_2",
+            pin: true,
+            pinSpacing: true,
+            scrub: 1,
+            start: "bottom bottom",
+            end: "+=100%"
+        }
+    });
 
+    //HORIZONTAL SCROLLING
+    // let slides = gsap.utils.toArray(".slide");
+    // gsap.to(slides, {
+    //     xPercent: -100 * (slides.length - 2),
+    //     ease: "none",
+    //     scrollTrigger: {
+    //         id: "turnItOff",
+    //         trigger: "#section_2",
+    //         pin: true,
+    //         pinSpacing: true,
+    //         scrub: 1,
+    //         start: "bottom bottom",
+    //         end: "+=100%"
+    //     }
+    // });
 
+    if($(window).width() <= 1023){
+        //tl2.kill();
+        tl2.scrollTrigger.disable();
+    }
 
-
+    // 메뉴 페이지 스크롤
     var windowsize = $(window).width();
     var sectionArray = [1, 2, 3, 4, 5];
-    var headerHeight =$("#header").outerHeight();
+    var headerHeight = $("#header").outerHeight();
     $.each(sectionArray, function(index, value){
         $('.navbar .click_scroll').eq(index).click(function(e){
-            var offsetClick = $('#' + 'section_' + value).offset().top - headerHeight;
-            var offsetClick2 = $('#' + 'section_' + value).offset().top - (headerHeight*headerHeight);
-            
+            var offsetClick = $('#' + 'section_' + value).offset().top - headerHeight + 2;
+
+            /* 
+            if(windowsize <= 1023){
+                //if ( docScroll1 >= offsetSection2 ){
+                    $(".hamburger").removeClass("is_active");
+                    $(".nav_side").removeClass("on");
+                //}
+                $('html, body').animate({
+                    'scrollTop': offsetClick2
+                }, 300);
+            }else{
+                $('html, body').animate({
+                    'scrollTop': offsetClick
+                }, 300);
+            }*/
+
             $('html, body').animate({
                 'scrollTop': offsetClick
             }, 300);
-        
+            
             e.preventDefault();
         });
 
-
         $(document).scroll(function(){
             var offsetSection = $('#' + 'section_' + value).offset().top - headerHeight;
-            var offsetSection2 = $('#' + 'section_' + value).offset().top - (headerHeight*headerHeight);
             var docScroll = $(document).scrollTop();
             var docScroll1 = docScroll + 1;
-            /* 
             if(windowsize <= 1023){
-                if ( docScroll1 >= offsetSection2 ){
-                    $(".hamburger").removeClass("is_active");
-                    $(".nav_side").removeClass("on");
-                }
+                $(".hamburger").removeClass("is_active");
+                $(".nav_side").removeClass("on");
             }
-            */
-
-
-            if ( docScroll1 >= offsetSection ){
+            if( docScroll < $(".video_section").outerHeight() - 180 ){
+                $('.navbar .nav_item:first-child .nav_link').removeClass('active');
+                $('.navbar .nav_item:first-child .nav_link').addClass('inactive');  
+            }else if( docScroll1 >= offsetSection ){
                 $('.navbar .nav_item .nav_link').removeClass('active');
                 $('.navbar .nav_item .nav_link:link').addClass('inactive');  
                 $('.navbar .nav_item .nav_link').eq(index).addClass('active');
                 $('.navbar .nav_item .nav_link').eq(index).removeClass('inactive');
             }
-            
-            
         });
-
     });
 
-    var tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#section_1",
-            start: "top top",
-            end: "+=120%",
-            scrub: true,
-            pin: true,
-            //markers: true
-        }
-    });
-
-    tl.to(".txts_scroll", {
-        y: "-100%"
-    });
-
-
-
-
-    // feather.replace();
-    // AOS.init();
-    var tab= ['ESG', 'ESG', 'ECO Web', 'Social', 'Solution'];
-    var inc02Swiper = new Swiper(".service_inner .r_cont .swiper-container", {
-        loop: true,
+    // core service 슬라이드 영역
+    var serviceSwiper = new Swiper(".service_inner .r_cont .swiper-container", {
+        loop:true,
+        slidesPerGroup:1,
+        loopAdditionalSlides:1,
         speed:1400,
         slidesPerView : "auto",
         spaceBetween : 28,
-        slideActiveClass: 'on',
+        mousewheelControl: true,
         pagination: {
-            el: '.service_inner .pager_txt',
-            clickable: true,
-            bulletActiveClass : 'on',
-            renderBullet: function (index, className) {
-                return '<p class="' + className + '"><span>' + (tab[index]) + '</span></p>';
-            },
+            el: '.page_scroll',
+            type: 'bullets'
         },
         navigation: {
-            prevEl: '.service_inner .nav_arrow .prev',
+            nextEl: '.service_inner .nav_arrow',
         },
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
+        breakpoints: {
+            468: {
+                spaceBetween: 10,
+            },
+            1280: {
+                spaceBetween : 28,
+            },
+        },
+        on : {
+            init : function () { },
+            slideChange : function() {
+                //console.log(this.realIndex);
+                if(this.realIndex == 0){
+                    $(".slide_menu").removeClass("on");
+                    $(".menu01").addClass("on");
+                }else if(this.realIndex == 1){
+                    $(".slide_menu").removeClass("on");
+                    $(".menu01").addClass("on");
+                }else if(this.realIndex == 2){
+                    $(".slide_menu").removeClass("on");
+                    $(".menu02").addClass("on");
+                }else if(this.realIndex == 3){
+                    $(".slide_menu").removeClass("on");
+                    $(".menu03").addClass("on");
+                }else if(this.realIndex == 4){
+                    $(".slide_menu").removeClass("on");
+                    $(".menu04").addClass("on");
+                }
+            },
         },
     });
 
-/*
-    var pinAmount = $(".sec1_txt").outerHeight;
-    var horizontal_scroll_tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".sec1_txt",
-        scrub: 0.5,
-        pin: ".section_1",
-        start: "top top",
-        end: () => `${pinAmount}`
-    }})
-
-    var pinAmount = $("#section_1").outerHeight;
-    var tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#section_1",
-            start: "top top",
-            end: "+=120%",
-            //end: () => `${pinAmount}*10`,
-            scrub: true,
-            pin: true,
-            //markers: true
-        }
+    $(".slide_menu.menu01").on("click", function(){
+        serviceSwiper.slideTo(0);
+    });
+    $(".slide_menu.menu02").on("click", function(){
+        serviceSwiper.slideTo(2);
+    });
+    $(".slide_menu.menu03").on("click", function(){
+        serviceSwiper.slideTo(3);
+    });
+    $(".slide_menu.menu04").on("click", function(){
+        serviceSwiper.slideTo(4);
     });
 
-    tl.to(".txts_scroll", {
-        y: "-100%"
+
+
+    var $dotList = $(".r_cont .swiper-pagination-bullet"); /* indicator width */
+    var dotCnt = $dotList.length;
+    $dotList.each(function(){
+        $(this).attr("style", "width:"+(100/dotCnt).toFixed(3)+"%;");
     });
 
-*/
 
+    // 페이지 모션
+    AOS.init();
 
-    /* AOS EFFECT */
-    //AOS.init();
-
-
-    
-   
-/* */
-    /* HEAGER SHOW, HIDE EFFECT */
-    /*
-    let preScrollTop = 0;
-    window.addEventListener('scroll',() => {
-        let nextScrollTop = window.scrollY;
-        if(preScrollTop < nextScrollTop) {//console.log('Down');
-            $("#header").addClass("down");
-        } else { //console.log('Up');
-            $("#header").addClass("bg");
-            $("#header").removeClass("down");
-        }
-        if(nextScrollTop === 0){
-            $("#header").removeClass("bg");
-            $("#header").removeClass("down");
-        }
-        preScrollTop = nextScrollTop;
-    });
-    */
-    /* SCROLL CHECK */
-    /*
-    const $counters = $(".scroll_on");
-    const exposurePercentage = 100;
-    const loop = true;
-
-    $(window).on('scroll', function() { 
-        $counters.each(function() {
-            const $el = $(this);
-            const rect = $el[0].getBoundingClientRect();
-            const winHeight = window.innerHeight;
-            const contentHeight = rect.bottom - rect.top;
-            if (rect.top <= winHeight - (contentHeight * exposurePercentage / 110) && rect.bottom >= (contentHeight * exposurePercentage / 110)) {
-                $el.addClass('active');
-            }
-            if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                $el.removeClass('active');
-            }
-        });
-    }).scroll();
-    */
-    /* MO -> AOS SCROLL ELEMENT OPTION REMOVE */
-    /*
-    function mo_aos_delay(){
-        if( $(window).width() < 1024){
-            $(".aspiration_box_inner ul li").removeAttr("data-aos-delay"); // team page
-            $(".history_tit_box_inner h2 p").removeAttr("data-aos-delay"); // company page
-        }
-    }
-    mo_aos_delay();
-    */
-    /* MO -> height 100vh */
-    /*
-    function setScreenSize() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setScreenSize();
-    */
-    /* RESIZE FUNCTION */
-    /*
-    $(window).resize(function() {
-        setScreenSize();
-    }); 
-    */
 });
 
 
