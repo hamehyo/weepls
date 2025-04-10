@@ -1263,9 +1263,11 @@ body.greyscale{
     .btn_mode{
         top: -105px;
         left: calc(100vw - 100px);
-        width: 80px;
-        height: 80px;
-        font-size: 9px;
+        width: 60px;
+        height: 60px;
+    }
+    .btn_mode span{
+        font-size: 10px;
     }
     #header .logo {
         padding: 15px 0;
