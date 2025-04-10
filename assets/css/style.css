@@ -1246,22 +1246,26 @@ body.greyscale{
     .btn_hp_making{
         bottom: 0;
         left: 0;
-        padding: 8px 0;
+        padding: 5px 0 8px;
         width: 150px;
         border-top-right-radius: 10px;
         border-top-left-radius: 0;
     }
     .btn_hp_making span {
-        padding: 0 0 0 20px;
+        padding: 0 0 0 18px;
         vertical-align: middle;
         font-size: 10px;
+    }
+    .btn_hp_making span::before{
+        width: 5px;
+        height: 13px;
     }
     .btn_mode{
         top: -105px;
         left: calc(100vw - 100px);
-        width: 90px;
-        height: 90px;
-        font-size: 10px;
+        width: 80px;
+        height: 80px;
+        font-size: 9px;
     }
     #header .logo {
         padding: 15px 0;
