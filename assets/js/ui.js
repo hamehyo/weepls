@@ -3,7 +3,6 @@ $(function (){
     /* MO -> height 100vh */
     function setScreenSize() {
         var vh = window.innerHeight * 0.01;
-        console.log(vh);
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     setScreenSize();
@@ -16,10 +15,23 @@ $(function (){
             $(this).children("span").text("GREYSCALE");
             tl.scrollTrigger.enable();
             tl2.scrollTrigger.enable();
+            
+            $(".ourway_section").css({ "min-height": "100vh" });
+            $(".ourway_section .inner").css({ "height": "80vh" });
+            $(".ourway_section .set1_conts .txts").css({ "height": "560px" });
+
         }else{
             $(this).children("span").text("RGB COLOR");
+            
             tl.scrollTrigger.disable();
             tl2.scrollTrigger.disable();
+
+            $(".ourway_section").css({ "min-height": "initial" });
+            $(".ourway_section .inner").css({ "height": "initial" });
+            $(".ourway_section .set1_conts .txts").css({ "height": "auto" });
+
+
+            
         }
     });
 
@@ -116,32 +128,27 @@ $(function (){
     var windowsize = $(window).width();
     var sectionArray = [1, 2, 3, 4, 5];
     var headerHeight = $("#header").outerHeight();
+
     $.each(sectionArray, function(index, value){
+
+        if(windowsize <= 1023){
+            $('.nav_side .click_scroll').eq(index).click(function(e){
+                var offsetClick_mo = $('#' + 'section_' + value).offset().top - headerHeight + 10;
+                $('html, body').animate({
+                    'scrollTop': offsetClick_mo
+                }, 600);
+                e.preventDefault();
+            });
+        }
+
         $('.navbar .click_scroll').eq(index).click(function(e){
             var offsetClick = $('#' + 'section_' + value).offset().top - headerHeight + 2;
-
-            /* 
-            if(windowsize <= 1023){
-                //if ( docScroll1 >= offsetSection2 ){
-                    $(".hamburger").removeClass("is_active");
-                    $(".nav_side").removeClass("on");
-                //}
-                $('html, body').animate({
-                    'scrollTop': offsetClick2
-                }, 300);
-            }else{
-                $('html, body').animate({
-                    'scrollTop': offsetClick
-                }, 300);
-            }*/
-
             $('html, body').animate({
                 'scrollTop': offsetClick
-            }, 300);
-            
+            }, 400);
             e.preventDefault();
         });
-
+        
         $(document).scroll(function(){
             var offsetSection = $('#' + 'section_' + value).offset().top - headerHeight;
             var docScroll = $(document).scrollTop();
@@ -160,7 +167,20 @@ $(function (){
                 $('.navbar .nav_item .nav_link').eq(index).removeClass('inactive');
             }
         });
+
     });
+
+    /* 
+    if(windowsize <= 1023){
+        $('.nav_side .navbar .click_scroll').click(function(e){
+            var offsetClick_mo = $('#' + 'section_' + value).offset().top - headerHeight * 2;
+            $('html, body').animate({
+                'scrollTop': offsetClick_mo
+            }, 300);
+            e.preventDefault();
+        });
+    }
+        */
 
     // core service 슬라이드 영역
     var serviceSwiper = new Swiper(".service_inner .r_cont .swiper-container", {

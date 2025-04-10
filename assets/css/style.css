@@ -691,7 +691,7 @@ body.greyscale{
 }
 .web_section .web_conts_box .web_cont.team ul li{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     padding:0 0 50px 0;
 }
@@ -700,11 +700,16 @@ body.greyscale{
     vertical-align: top;
 }
 .web_section .web_conts_box .web_cont.team ul li .t_infos{
-    margin: 15px 0 0 30px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 0 0 30px;
     width: calc( 100% - 280px);
 }
 .web_section .web_conts_box .web_cont.team ul li .t_infos .tit{
-    padding: 0 0 30px 0;
+    padding: 0 0 34px 0;
+    line-height: 1.35;
     font-weight: 300;
     font-size: 30px;
     color: rgba(255,255,255,.5);
@@ -718,7 +723,7 @@ body.greyscale{
     color: #DDEDE8;
 }
 .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info.first{
-    padding: 0 0 15px 0;
+    padding: 0 0 18px 0;
 }
 .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dt{
     width: 150px;
@@ -1355,18 +1360,11 @@ body.greyscale{
         height:calc(var(--vh, 1vh) * 100);
     }
     .video_section .vd_txt_box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: 0 auto;
-        padding: 0 20px;
-        max-width: 1800px;
-        width: 100%;
-        height: 100%;
-    }
-    .video_section .vd_txt_box{
         padding: 0;
+        height:calc(var(--vh, 1vh) * 100);
+    }
+    .video_section .bg_video{
+        height:calc(var(--vh, 1vh) * 100);
     }
     .video_section .vd_txt_box img{
         margin: 0 auto;
@@ -1374,15 +1372,14 @@ body.greyscale{
     }
     .video_section .vd_txt_box p{ 
         margin: 0 auto;
-        width: 50%;
+        width: 100%;
+        max-width: 185px;
         text-align: center;
         padding: 10px 10px 0;
         font-size: 12px;
         opacity: 0.5;
         box-sizing: border-box;
     }
-    
-
 
     .service_section{
         padding: 60px 0 0 !important;
@@ -1613,11 +1610,13 @@ body.greyscale{
     }
 
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dt{
+        padding: 0 0 4px 0;
         width: 100%;
     }
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dd{
         width: 100%;
         line-height: 1.4;
+        word-break: keep-all;
     }
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dd p{
         padding-bottom: 5px;
