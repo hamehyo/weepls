@@ -1,5 +1,13 @@
 $(function (){
 
+    /* MO -> height 100vh */
+    function setScreenSize() {
+        var vh = window.innerHeight * 0.01;
+        console.log(vh);
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setScreenSize();
+
     // 그레이스케일모드
     $(".btn_mode").on("click", function(){
         $("body").toggleClass("greyscale");
@@ -51,12 +59,6 @@ $(function (){
     });
 
 
-    /* MO -> height 100vh */
-    function setScreenSize() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setScreenSize();
 
 
     // our way 영역
