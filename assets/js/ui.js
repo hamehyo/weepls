@@ -1,5 +1,6 @@
 $(function (){
 
+    
     /* MO -> height 100vh */
     function setScreenSize() {
         var vh = window.innerHeight * 0.01;
@@ -9,37 +10,47 @@ $(function (){
 
     // 그레이스케일모드
     $(".btn_mode").on("click", function(){
-        $("body").toggleClass("greyscale");
+        //$("body").toggleClass("greyscale");
+        //$(".body_inner").toggleClass("greyscale");
+        $(".stic_box").toggleClass("greyscale");
+        $(".video_section").toggleClass("greyscale");
+        $(".ourway_section_inner").toggleClass("greyscale");
+        $(".service_section_inner").toggleClass("greyscale");
+        $(".green_section").toggleClass("greyscale");
+        $(".web_section").toggleClass("greyscale");
+        $(".contact_section").toggleClass("greyscale");
+        $("#footer").toggleClass("greyscale");
+        $("#header").toggleClass("greyscale");
+        
+        
         $(this).toggleClass("grey");
         if($(this).hasClass("grey")){
             $(this).children("span").text("GREYSCALE");
-            tl.scrollTrigger.enable();
-            tl2.scrollTrigger.enable();
+            // tl.scrollTrigger.enable();
+            // tl2.scrollTrigger.enable();
             
-            $(".ourway_section").css({ "min-height": "100vh" });
-            $(".ourway_section .inner").css({ "height": "80vh" });
-            $(".ourway_section .set1_conts .txts").css({ "height": "560px" });
+            // $(".ourway_section").css({ "min-height": "100vh" });
+            // $(".ourway_section .inner").css({ "height": "80vh" });
+            // $(".ourway_section .set1_conts .txts").css({ "height": "560px" });
 
         }else{
             $(this).children("span").text("RGB COLOR");
             
-            tl.scrollTrigger.disable();
-            tl2.scrollTrigger.disable();
+            // tl.scrollTrigger.disable();
+            // tl2.scrollTrigger.disable();
 
-            $(".ourway_section").css({ "min-height": "initial" });
-            $(".ourway_section .inner").css({ "height": "initial" });
-            $(".ourway_section .set1_conts .txts").css({ "height": "auto" });
+            // $(".ourway_section").css({ "min-height": "initial" });
+            // $(".ourway_section .inner").css({ "height": "initial" });
+            // $(".ourway_section .set1_conts .txts").css({ "height": "auto" });
 
-
-            
         }
     });
 
     // 홈페이지 제작안내 button
     $(".btn_hp_making").on("click", function(e){
         $('html, body').animate({
-            'scrollTop': $('#section_4').offset().top - $("#header").outerHeight()
-        }, 300);
+            'scrollTop': $('#section_4').offset().top,
+        }, 900);
         e.preventDefault();
     });
 
@@ -50,12 +61,15 @@ $(function (){
 
     // 스크롤 시 해더 배경색 추가
     $(window).on("scroll", function(){
-        if($(window).scrollTop()){
-            $("#header").addClass("bg");
-        }else{
-            $("#header").removeClass("bg");
-        }
+        // if($(window).scrollTop()){
+        //     $("#header").addClass("bg");
+        // }else{
+        //     $("#header").removeClass("bg");
+        // }
         serviceSwiper.update();
+
+
+
     });
 
 
@@ -74,6 +88,7 @@ $(function (){
 
 
     // our way 영역
+    
     var tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#section_1",
@@ -81,7 +96,7 @@ $(function (){
             end: "+=40%",
             scrub: 2,
             pin: true,
-            toggleActions: "restart play none reset",
+            //toggleActions: "restart play none reset",
             //pinSpacing: false
             //markers: true
         }
@@ -89,20 +104,21 @@ $(function (){
     tl.to(".txts_scroll", {
         y: "-60%"
     });        
+    /* */
 
     // core service 영역
-/**/
+
     var tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section_2",
             pin: true,
             pinSpacing: true,
-            scrub: 1,
+            scrub: 2,
             start: "bottom bottom",
-            end: "+=100%"
+            end: "+=50%"
         }
     });
-
+/**/
     //HORIZONTAL SCROLLING
     // let slides = gsap.utils.toArray(".slide");
     // gsap.to(slides, {
@@ -133,7 +149,8 @@ $(function (){
 
         if(windowsize <= 1023){
             $('.nav_side .click_scroll').eq(index).click(function(e){
-                var offsetClick_mo = $('#' + 'section_' + value).offset().top - headerHeight + 10;
+                //var offsetClick_mo = $('#' + 'section_' + value).offset().top - headerHeight + 10;
+                var offsetClick_mo = $('#' + 'section_' + value).offset().top;
                 $('html, body').animate({
                     'scrollTop': offsetClick_mo
                 }, 600);
@@ -142,17 +159,60 @@ $(function (){
         }
 
         $('.navbar .click_scroll').eq(index).click(function(e){
-            var offsetClick = $('#' + 'section_' + value).offset().top - headerHeight + 2;
-            $('html, body').animate({
-                'scrollTop': offsetClick
-            }, 400);
+            // var offsetClick = $('#' + 'section_' + value).offset().top - headerHeight + 2;
+            var offsetClick = $('#' + 'section_' + value).offset().top + 1;
+            var our_section = $("#section_1").offset().top;
+            var core_section =  $("#section_2").offset().top - ($(window).outerHeight() - $("#section_2").outerHeight() );
+
+            // if(value == 1){
+            //     $("body").css({"overflow":"hidden"});
+            // }else{
+            //     $("body").css({"overflow":"initial"});
+            // }
+
+            if(value == 2){
+                $('html, body').animate({
+                    'scrollTop': core_section
+                }, 600);
+                //$('.navbar .nav_item:nth-child(2) .nav_link').removeClass('active');
+                $('.navbar .nav_item:first-child .nav_link').removeClass('active');
+                $('.navbar .nav_item .nav_link').addClass('inactive');  
+                $('.navbar .nav_item:nth-child(2) .nav_link').removeClass('inactive');  
+                $('.navbar .nav_item:nth-child(2) .nav_link').addClass('active'); 
+            }else{
+                $('html, body').animate({
+                    'scrollTop': offsetClick
+                }, 600);
+            }
+            
+            
+        
             e.preventDefault();
         });
         
         $(document).scroll(function(){
-            var offsetSection = $('#' + 'section_' + value).offset().top - headerHeight;
+            // var offsetSection = $('#' + 'section_' + value).offset().top - headerHeight;
+            var offsetSection = $('#' + 'section_' + value).offset().top;
             var docScroll = $(document).scrollTop();
             var docScroll1 = docScroll + 1;
+
+            var core_section =  $("#section_2").offset().top - ($(window).outerHeight() - $("#section_2").outerHeight() );
+
+            // if(docScroll == sec1){
+            //     console.log(1)
+            //     $("#section_1").addClass("sticky");
+            // }
+
+            if(docScroll <= core_section && docScroll > $("#section_1").offset().top + $(".ourway_section").outerHeight() - 100){
+                $('.navbar .nav_item:first-child .nav_link').removeClass('active');
+                $('.navbar .nav_item .nav_link').addClass('inactive');  
+                $('.navbar .nav_item:nth-child(2) .nav_link').removeClass('inactive');  
+                $('.navbar .nav_item:nth-child(2) .nav_link').addClass('active'); 
+            }
+            // if(docScroll1 >= $("#section_2").offset().top + 50 && docScroll1 < $("#section_2").offset().top +  $("#section_2").outerHeight()){
+            //     $("#header").css({ "background-color": "#17211E"});
+            // }
+
             if(windowsize <= 1023){
                 $(".hamburger").removeClass("is_active");
                 $(".nav_side").removeClass("on");
@@ -190,10 +250,11 @@ $(function (){
         speed:1400,
         slidesPerView : "auto",
         spaceBetween : 28,
-        mousewheelControl: true,
+        allowTouchMove: false,
+        mousewheelControl: false,
         autoplay : { 
             delay : 3000, 
-            disableOnInteraction : false, 
+            disableOnInteraction : true, 
         },
         pagination: {
             el: '.page_scroll',
