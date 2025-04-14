@@ -1,6 +1,5 @@
 $(function (){
 
-    
     /* MO -> height 100vh */
     function setScreenSize() {
         var vh = window.innerHeight * 0.01;
@@ -10,8 +9,6 @@ $(function (){
 
     // 그레이스케일모드
     $(".btn_mode").on("click", function(){
-        //$("body").toggleClass("greyscale");
-        //$(".body_inner").toggleClass("greyscale");
         $(".stic_box").toggleClass("greyscale");
         $(".video_section").toggleClass("greyscale");
         $(".ourway_section_inner").toggleClass("greyscale");
@@ -22,27 +19,11 @@ $(function (){
         $("#footer").toggleClass("greyscale");
         $("#header").toggleClass("greyscale");
         
-        
         $(this).toggleClass("grey");
         if($(this).hasClass("grey")){
             $(this).children("span").text("GREYSCALE");
-            // tl.scrollTrigger.enable();
-            // tl2.scrollTrigger.enable();
-            
-            // $(".ourway_section").css({ "min-height": "100vh" });
-            // $(".ourway_section .inner").css({ "height": "80vh" });
-            // $(".ourway_section .set1_conts .txts").css({ "height": "560px" });
-
         }else{
             $(this).children("span").text("RGB COLOR");
-            
-            // tl.scrollTrigger.disable();
-            // tl2.scrollTrigger.disable();
-
-            // $(".ourway_section").css({ "min-height": "initial" });
-            // $(".ourway_section .inner").css({ "height": "initial" });
-            // $(".ourway_section .set1_conts .txts").css({ "height": "auto" });
-
         }
     });
 
@@ -61,18 +42,8 @@ $(function (){
 
     // 스크롤 시 해더 배경색 추가
     $(window).on("scroll", function(){
-        // if($(window).scrollTop()){
-        //     $("#header").addClass("bg");
-        // }else{
-        //     $("#header").removeClass("bg");
-        // }
         serviceSwiper.update();
-
-
-
     });
-
-
 
     // 모바일 햄버거 메뉴
     $(".hamburger").click(function(){
@@ -85,10 +56,7 @@ $(function (){
     });
 
 
-
-
     // our way 영역
-    
     var tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#section_1",
@@ -104,10 +72,8 @@ $(function (){
     tl.to(".txts_scroll", {
         y: "-60%"
     });        
-    /* */
 
     // core service 영역
-
     var tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section_2",
@@ -118,27 +84,12 @@ $(function (){
             end: "+=50%"
         }
     });
-/**/
-    //HORIZONTAL SCROLLING
-    // let slides = gsap.utils.toArray(".slide");
-    // gsap.to(slides, {
-    //     xPercent: -100 * (slides.length - 2),
-    //     ease: "none",
-    //     scrollTrigger: {
-    //         id: "turnItOff",
-    //         trigger: "#section_2",
-    //         pin: true,
-    //         pinSpacing: true,
-    //         scrub: 1,
-    //         start: "bottom bottom",
-    //         end: "+=100%"
-    //     }
-    // });
 
+    /* 
     if($(window).width() <= 1023){
-        //tl2.kill();
         tl2.scrollTrigger.disable();
     }
+    */
 
     // 메뉴 페이지 스크롤
     var windowsize = $(window).width();
@@ -185,8 +136,6 @@ $(function (){
                 }, 600);
             }
             
-            
-        
             e.preventDefault();
         });
         
@@ -240,7 +189,7 @@ $(function (){
             e.preventDefault();
         });
     }
-        */
+    */
 
     // core service 슬라이드 영역
     var serviceSwiper = new Swiper(".service_inner .r_cont .swiper-container", {
@@ -307,8 +256,6 @@ $(function (){
     $(".slide_menu.menu04").on("click", function(){
         serviceSwiper.slideTo(4);
     });
-
-
 
     var $dotList = $(".r_cont .swiper-pagination-bullet"); /* indicator width */
     var dotCnt = $dotList.length;
