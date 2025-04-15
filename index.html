@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBDG85Y4L4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-BBDG85Y4L4');
+	</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>위플즈(Weepls)</title>
@@ -28,12 +38,10 @@
     <script src="./assets/js/lib/jquery.min.js"></script>
     <script src="./assets/js/lib/swiper.min.js"></script>
     <script src="./assets/js/lib/aos.js"></script>
+    <script src="./assets/js/lib/gsap-latest.min.js"></script>
+    <script src="./assets/js/lib/ScrollTrigger.min.js"></script>
     <script src="./assets/js/ui.js"></script>
-
-    <script src="https://assets.codepen.io/16327/gsap-latest-beta.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
     
-
     <link rel="stylesheet" href="./assets/css/lib/swiper.min.css">
     <link rel="stylesheet" href="./assets/css/lib/aos.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -46,7 +54,7 @@
     <header id="header" class="greyscale">
         <div class="header_inner">
             <h1 class="logo">
-                <a href="/weepls/index.html"><span class="hidden_txt">위플즈</span></a>
+                <a href="/"><span class="hidden_txt">위플즈</span></a>
             </h1>
             <nav class="only_pc">
                 <ul class="navbar">
@@ -130,7 +138,7 @@
                                     인터넷은 보이지 않지만, 환경에 미치는 영향은 결코 가볍지 않습니다. 
                                     전 세계 데이터 센터가 배출하는 탄소량은 항공 산업과 맞먹을 정도로 커졌고, 
                                     우리가 매일 이용하는 웹사이트와 디지털 서비스도 그 일부가 되고 있습니다. 
-                                    기술이 발전할수록, 그리고 데이터가 폭발적으로 증가할수록 <strong>디지털 환경의 지속 가능성</strong>x은 
+                                    기술이 발전할수록, 그리고 데이터가 폭발적으로 증가할수록 <strong>디지털 환경의 지속 가능성</strong>은 
                                     더 이상 뒤로 미룰 수 없는 과제가 되었습니다.
                                     우리는 바로 이 지점에서 시작했습니다. <strong>웹은 편리해야 하지만, 동시에 지속 가능해야 합니다.</strong>  
                                     혁신은 환경을 해치지 않고도 이루어질 수 있어야 하며,
@@ -297,7 +305,7 @@
                             </li>
                             <li>
                                 <dl>
-                                    <dt>Bisiness Docs</dt>
+                                    <dt>Business Docs</dt>
                                     <dd>입찰·사업 제안서 작성 및 컨설팅, 프로젝트 기획서, 보고서 및 프레젠테이션 제작, 그래픽 디자인(GD)</dd>
                                 </dl>
                                 <img src="./assets/images/business_docs.png" alt="Bisiness Docs">
@@ -466,30 +474,30 @@
                     </div><!-- //map_info -->
                 </div><!-- //map_box -->
                 <div class="inquiry_box">
-                    <form action="">
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeGokZuIpU5uPeJIug_cJQBIu0CC9_AbEOu6bCoB1c8z7n4Nw/formResponse" method="post" role="form" target="hidden_iframe" onsubmit="handleFormSubmit();" id="contactForm">
                         <ul>
                             <li>
                                 <div class="input_box">
-                                    <input type="text" name="" placeholder="이름">
+                                    <input type="text" name="entry.1444634941" placeholder="이름" required="">
                                 </div>
                             </li>
                             <li>
                                 <div class="input_box">
-                                    <input type="text" name="" placeholder="이메일">
+                                    <input type="email" name="entry.2073778069" id="email" pattern="[^ @]*@[^ @]*" placeholder="이메일" required="">
                                 </div>
                             </li>
                             <li>
                                 <div class="input_box">
-                                    <input type="text" name="" placeholder="제목">
+                                    <input type="text" name="entry.1052358839" id="name" placeholder="제목" required="">
                                 </div>
                             </li>
                             <li>
                                 <div class="input_box textarea_box">
-                                    <textarea name="" id="" placeholder="문의내용"></textarea>
+                                    <textarea name="entry.1701857090" id="message" placeholder="문의내용"></textarea>
                                 </div>
                             </li>
                         </ul>
-                        <button type="button" class="btn_inquiry">문의하기</button>
+                        <button type="submit" class="btn_inquiry">문의하기</button>
                     </form>
                 </div><!-- //inquiry_box-->
             </div><!-- //contact_inner -->
@@ -503,5 +511,16 @@
         </div>
     </footer>
 </div><!-- //body_inner -->
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+	function handleFormSubmit() {
+		setTimeout(function() {
+			alert("제출이 완료되었습니다.");
+			window.location.href = "/"; // 홈 화면으로 이동
+		}, 500); // 잠시 지연 후 실행하여 폼이 정상적으로 제출되도록 유도
+	}
+</script>
 </body>
 </html>
