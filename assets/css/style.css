@@ -75,6 +75,7 @@ html,body{
 #wrapper{
     overflow: hidden;
     position: relative;
+    scroll-snap-type: y mandatory;
 }
 
 .inner{
@@ -117,7 +118,16 @@ html,body{
     filter: saturate(0);
 } */
 
-
+.swipe-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .swipe-section .panel {
+    position: absolute;
+  }
 .stic_box{
     position: sticky;
     z-index: 100;
@@ -162,9 +172,12 @@ html,body{
     background: url("../images/ico_quick_arrow.png") no-repeat center/cover;
 }
 .btn_mode{
-    position: absolute;
+    /* position: absolute;
     top: -105px;
-    left: calc(100vw - 150px);
+    left: calc(100vw - 150px); */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
     width: 120px;
     height: 120px;
     background-color: #121212;
@@ -181,6 +194,8 @@ html,body{
     font-size: 14px;
     color: #999;
 }
+
+
 
 
 /* start : HEADER */
@@ -309,12 +324,15 @@ html,body{
     color: rgba(3,214,147,50);
 }
 
+.ourway_section{
+    scroll-snap-align: start;
+}
 
 .ourway_section_inner{
     background-color: #001E14;
     /* min-height: 100vh; */
     min-height: 100vh;
-    padding:100px 0 0;
+    padding:140px 0 0;
     box-sizing: border-box;
 }
 .ourway_section_inner.greyscale{
@@ -373,6 +391,7 @@ html,body{
 .ourway_section .set1_conts .txts .txts_scroll{
     position: relative;
     margin: 0 auto;
+    padding: 0 0 500px;
     max-width: 900px;
 }
 .ourway_section .set1_conts .txts p{
@@ -416,7 +435,7 @@ html,body{
 .service_section_inner{
     padding: 150px 0 0;
     background-color: #17211E;
-    /* height: 100vh; */
+    height: 100vh;
     box-sizing: border-box;
 }
 .service_section_inner.greyscale{
@@ -430,6 +449,8 @@ html,body{
     padding: 0;
     max-width: 1800px;
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 .service_section .l_cont{
     position: relative;
@@ -571,8 +592,10 @@ html,body{
 
 /* ------------ section 3 ------------ */
 .green_section{
-    padding: 200px 0 150px;
+    padding: 150px 0;
+    height: 100vh;
     background: url("../images/bg_green.png") no-repeat center/cover;
+    box-sizing: border-box;
 }
 .green_section.greyscale{
     filter: saturate(0);
@@ -1332,8 +1355,8 @@ html,body{
         height: 13px;
     }
     .btn_mode{
-        top: -105px;
-        left: calc(100vw - 100px);
+        /* top: -105px;
+        left: calc(100vw - 100px); */
         width: 60px;
         height: 60px;
     }
@@ -1463,6 +1486,7 @@ html,body{
     }
     .service_section .service_inner{
         flex-direction: column;
+        /* position: initial; */
     }
     .service_section .l_cont {
         margin: 0 0 20px;
