@@ -1704,18 +1704,18 @@ html,body{
     }
 */
     .video_section {
-        min-height: 100vh;
-        /* height:calc(var(--vh, 1vh) * 100); */
-        height: 100vh;
+        min-height: calc(var(--vh, 1vh) * 100);
+        height:calc(var(--vh, 1vh) * 100);
+        /* height: 100vh; */
     }
     .video_section .vd_txt_box {
         padding: 0;
-        /* height:calc(var(--vh, 1vh) * 100); */
-        height: 100vh;
+        height:calc(var(--vh, 1vh) * 100);
+        /* height: 100vh; */
     }
     .video_section .bg_video{
-        /* height:calc(var(--vh, 1vh) * 100); */
-        height: 100vh;
+        height:calc(var(--vh, 1vh) * 100);
+        /* height: 100vh; */
     }
     .video_section .vd_txt_box img{
         margin: 0 auto;
