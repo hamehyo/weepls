@@ -1975,7 +1975,7 @@ html,body{
 
 
 
-/*
+/**/
 
     .stic_box{
         top: calc(var(--vh, 1vh) * 100);
@@ -1984,7 +1984,7 @@ html,body{
         min-height: 100vh;
         height:calc(var(--vh, 1vh) * 100);
     }
-        */
+        
     .video_section .vd_txt_box {
         padding: 0;
         height:calc(var(--vh, 1vh) * 100);
@@ -2338,7 +2338,9 @@ html,body{
     .web_section .btn_portfolio{
         margin: 0 0 30px;
     }
-
+    .ourway_section .set1_conts .txts p.last{
+        padding: 60px 0 400px;
+    }
 
 }
 

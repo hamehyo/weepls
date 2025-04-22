@@ -1,5 +1,11 @@
 $(function (){
     
+    /* MO -> height 100vh */
+    function setScreenSize() {
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setScreenSize();
 
     $("#fullpage").fullpage({
         anchors: ["1stPage", "2cdPage", "3rdPage", "4thpage", "5thpage", "6thpage"],
