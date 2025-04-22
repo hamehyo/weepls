@@ -88,8 +88,7 @@ html,body{
     padding: 0 20px;
     max-width: 1080px;
 }
-
-.stic_box{
+/* .stic_box{
     position: sticky;
     z-index: 100;
     top: 100vh;
@@ -97,8 +96,8 @@ html,body{
     width: 1px;
     margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw);
-}
-.stic_box.greyscale{
+} */
+.btn_hp_making.greyscale{
     filter: saturate(0);
 }
 .btn_hp_making{
@@ -1698,11 +1697,11 @@ html,body{
     }
 
 
-/*
+/**/
     .stic_box{
         top: calc(var(--vh, 1vh) * 100);
     }
-*/
+
     .video_section {
         min-height: calc(var(--vh, 1vh) * 100);
         height:calc(var(--vh, 1vh) * 100);
@@ -1980,7 +1979,7 @@ html,body{
 
     .contact_section .contact_inner{
         flex-direction: column;
-        padding: 0;
+        padding: 0 0 30px;
     }
     .contact_section .contact_inner .map_box {
         width: 100%;
@@ -2008,6 +2007,7 @@ html,body{
     .contact_section .contact_inner .inquiry_box{
         margin: 0 20px;
         width: calc( 100% - 40px);
+        box-sizing: border-box;
     }
     .contact_section .contact_inner .inquiry_box ul li .input_box{
         height: 40px;

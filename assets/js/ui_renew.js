@@ -145,7 +145,7 @@ $(function (){
     // 그레이스케일모드
     $(".btn_mode").on("click", function(e){
         $(".ourway_section").toggleClass("greyscale");
-        $(".stic_box").toggleClass("greyscale");
+        $(".btn_hp_making").toggleClass("greyscale");
         $(".video_section").toggleClass("greyscale");
         $(".ourway_section_inner").toggleClass("greyscale");
         $(".service_section_inner").toggleClass("greyscale");
