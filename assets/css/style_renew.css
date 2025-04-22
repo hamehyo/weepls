@@ -2163,10 +2163,12 @@ html,body{
 
     .web_section .web_tit_box h3 > p{
         letter-spacing: 1px;
+        font-weight: 300;
         font-size: 30px;
     }
     .web_section .web_tit_box .sub_txt{
-        line-height: 1.45;
+        line-height: 1.4;
+        font-weight: 400;
         font-size: 16px;
     }
     .web_section .web_tit_box p{

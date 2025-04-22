@@ -128,13 +128,6 @@ $(function (){
             */
 		}
     });
-    AOS.init({
-        //offset: 200, // 애니메이션이 트리거되는 지점 조정
-        duration: 600, // 애니메이션 지속 시간
-        //easing: 'ease-in-out', // 애니메이션 효과
-        //once: true, // 애니메이션이 한 번만 실행되도록 설정
-    });
-
 
     // 그레이스케일모드
     $(".btn_mode").on("click", function(e){
