@@ -366,8 +366,9 @@ html,body{
 .ourway_section::before{
     content: '';
     position: absolute;
+    left: 0;
     top: 0;
-    height: 300px;
+    height: 200px;
     width: 100%;
     background: linear-gradient(to top,rgba(0, 30, 20, 0) 0%, rgba(0, 30, 20, 1) 50%);
     z-index: 200;
@@ -375,8 +376,9 @@ html,body{
 .ourway_section::after{
     content: '';
     position: absolute;
+    left: 0;
     bottom: 0;
-    height: 300px;
+    height: 200px;
     width: 100%;
     background: linear-gradient(to bottom,rgba(0, 30, 20, 0) 0%, rgba(0, 30, 20, 1) 50%);
     z-index: 200;
@@ -662,7 +664,6 @@ html,body{
     height: 30px;
     background-color: #000;
     border-radius: 0;
-    
 }
 .service_section .r_cont .page_scroll .swiper-pagination-bullet{
     height: 100%;
@@ -2040,7 +2041,11 @@ html,body{
         box-sizing: border-box;
     }
     .service_section .r_cont .navi_box .swiper_btn.prev{
-        left: 0;
+        left: 10px;
+    }
+    .service_section .r_cont .navi_box .swiper_btn{
+        width: 20px;
+        height: 33px;
     }
     .service_section .r_cont .swiper-container{
         margin: 0 0 40px;
@@ -2078,7 +2083,9 @@ html,body{
         padding: 0 60px 0 0;
         font-size: 26px;
     }
-
+    .service_section .r_cont .page_scroll{
+        height: 22px;
+    }
 
 
     .ourway_section .set1_conts{
@@ -2120,18 +2127,18 @@ html,body{
     .green_section h3 {
         margin: 0 auto;
         width: 77%;
-        padding: 0 0 25px 0;
+        padding: 38px 0 20px;
         line-height: 1.5;
-        font-size: 26px;
+        font-size: 25px;
         word-break: keep-all;
     }
     .green_section .green_list{
         flex-direction: column;
     }
     .green_section .green_list li{
-        margin: 15px 0;
-        width: 240px;
-        height: 240px;
+        margin: 10px 0;
+        width: 220px;
+        height: 220px;
     }
     .green_section .green_list li img{
         width: 25px;
