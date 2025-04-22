@@ -1525,7 +1525,7 @@ html,body{
         margin: 0 0 0 30px;
         width: 450px;
     }
-*/
+
 
 
 
@@ -1538,13 +1538,6 @@ html,body{
     #header .header_inner {
         max-width: 1420px;
     }
-    /* .contact_section .contact_inner{
-        max-width: 1420px;
-    } */
-
-
-
-
 
     .contact_section .contact_inner .map_box {
         width: calc(100% - 430px);
@@ -1572,15 +1565,11 @@ html,body{
 
 
 @media only screen and (max-width: 1480px) {
+
+
     #header .header_inner {
         max-width: 1280px;
     }
-    /* .contact_section .contact_inner{
-        max-width: 1280px;
-    } */
-
-
-
 
     .green_section h3 {
         padding: 0 0 60px 0;
@@ -1596,11 +1585,6 @@ html,body{
         font-size: 30px;
     }
 
-
-
-    .web_section {
-        /* padding: 160px 0 140px; */
-    }
     .web_section .web_tit_box h3 > p{
         line-height: 1.15;
         letter-spacing: 5px;
@@ -1611,9 +1595,6 @@ html,body{
 
 
 
-
-    
-
 }
 
 
@@ -1622,16 +1603,11 @@ html,body{
     #header .header_inner {
         max-width: 1190px;
     }
-    /* .contact_section .contact_inner{
-        max-width: 1000px;
-    } */
 
     .btn_mode{
         width: 100px;
         height: 100px;
     }
-
-
 
     .ourway_section .set1_conts .txts p{
         font-size: 30px;
@@ -1667,23 +1643,17 @@ html,body{
         width: 60px;
         height: 60px;
     }
-
-
     .service_section .r_cont {
         width: calc(100% - 400px);
     }
-
-
     .service_section .r_cont .swiper-slide .tit {
         padding: 0 0 24px;
         font-size: 30px;
     }
-
     .service_section .r_cont .swiper-slide .txt_list li {
         padding: 0 0 10px 16px;
         font-size: 16px;
     }
-
     .service_section .r_cont .swiper-slide {
         padding: 40px 40px 66px;
         width: 560px !important;
@@ -1692,22 +1662,6 @@ html,body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* .web_section {
-        padding: 160px 0 120px;
-    } */
     .web_section .web_conts_box .web_cont h4 {
         padding: 0 0 30px 0;
         font-size: 16px;
@@ -1719,10 +1673,6 @@ html,body{
         padding: 8px 0;
         font-size: 32px;
     }
-
-
-
-
     .web_section .web_conts_box .web_cont.business ul li dl dd {
         padding: 15px 0;
         line-height: 1.3;
@@ -1759,24 +1709,6 @@ html,body{
     .web_section .btn_portfolio{
         margin: 20px auto 150px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1916,13 +1848,11 @@ html,body{
     .btn_hamburger.active span:last-child {
         transform: rotate(-45deg);
     }   
-    
     .nav_side{
         position: fixed;
         left:0;
         top: -60%;
         width: 100%;
-        /* background-color: #000; */
         z-index: 99;
         transition: top 0.7s ease-in-out;
     }
@@ -1944,8 +1874,8 @@ html,body{
         text-align: right;
     }
     .nav_side .nav_side_inner ul li a{
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: auto;
         padding: 8px 15px 10px;
         font-size: 14px;
         color: #fff;
@@ -1963,8 +1893,6 @@ html,body{
         letter-spacing: -0.012rem;
         font-size: 1.25rem;
     }
-
-
     .footer{
         padding: 20px 0;
     }
@@ -1973,19 +1901,15 @@ html,body{
     }
 
 
-
-
-
-/**/
-
+/*
     .stic_box{
         top: calc(var(--vh, 1vh) * 100);
     }
+*/
     .video_section {
         min-height: 100vh;
         height:calc(var(--vh, 1vh) * 100);
     }
-        
     .video_section .vd_txt_box {
         padding: 0;
         height:calc(var(--vh, 1vh) * 100);
@@ -1993,12 +1917,10 @@ html,body{
     .video_section .bg_video{
         height:calc(var(--vh, 1vh) * 100);
     }
-
     .video_section .vd_txt_box img{
         margin: 0 auto;
         width: 80%;
     }
-
     .video_section .vd_txt_box p{ 
         margin: 0 auto;
         width: 100%;
@@ -2006,11 +1928,9 @@ html,body{
         text-align: center;
         padding: 10px 10px 0;
         font-size: 16px;
-        /* opacity: 0.5; */
         box-sizing: border-box;
     }
     .service_section{
-        /* padding: 60px 0 0 !important; */
         box-sizing: border-box;
     }
     .service_section_inner{
@@ -2018,7 +1938,6 @@ html,body{
     }
     .service_section .service_inner .cont_box{
         flex-direction: column;
-        /* position: initial; */
     }
     .service_section .l_cont {
         margin: 0 0 20px;
@@ -2112,18 +2031,9 @@ html,body{
 
 
 
-
-
-
-
-
-
-
     .green_section{
-        /* padding: 90px 0; */
         background: url("../images/bg_green_mo.png") no-repeat center / cover;
     }
-
     .green_section h3 {
         margin: 0 auto;
         width: 77%;
@@ -2153,21 +2063,9 @@ html,body{
     }
 
 
-
-
-
-
-
-
-
-    .web_section{
-        /* padding: 100px 0 60px; */
-    }
-
     .web_section .web_tit_box{
         padding: 100px 0 0;
     }
-
     .web_section .web_tit_box h3 > p{
         letter-spacing: 1px;
         font-weight: 300;
@@ -2280,13 +2178,6 @@ html,body{
     }
 
 
-
-    
-
-
-    .contact_section{
-        /* padding: 100px 0 20px; */
-    }
     .contact_section .contact_inner{
         flex-direction: column;
         padding: 0;
@@ -2314,13 +2205,10 @@ html,body{
         padding: 0 0 5px !important;
         font-size: 14px;
     }
-
     .contact_section .contact_inner .inquiry_box{
         margin: 0 20px;
         width: calc( 100% - 40px);
     }
-
-
     .contact_section .contact_inner .inquiry_box ul li .input_box{
         height: 40px;
     }
@@ -2352,6 +2240,8 @@ html,body{
     .ourway_section .set1_conts .txts p.last{
         padding: 60px 0 500px;
     }
+
+
 
 }
 

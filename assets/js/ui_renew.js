@@ -194,15 +194,10 @@ $(function (){
     // 스크롤 시 해더 배경색 추가
     $(window).on("scroll", function(){
         serviceSwiper.update();
-
-        console.log($(".web_inner").scrollTop());
-        console.log($(window).scrollTop());
-        console.log($(".web_inner").height());
-
     });
 
     // 모바일 햄버거 메뉴
-    $(".btn_hamburger").click(function(){
+    $(".btn_hamburger").on("click", function(){
         $(this).toggleClass("active");
         if( $(this).hasClass("active") ){
             $(".nav_side").addClass("on");
@@ -211,8 +206,10 @@ $(function (){
         }
     });
 
-    
-
+    $(".nav_side .nav_item").on("click", function(){
+        console.log(1);
+        $(".btn_hamburger").trigger("click");
+    });
     
 
     $(".nav_arrow").on("click", function(){
