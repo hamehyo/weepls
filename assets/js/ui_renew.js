@@ -1,5 +1,5 @@
 $(function (){
-    
+
     /* MO -> height 100vh */
     function setScreenSize() {
         var vh = window.innerHeight * 0.01;
@@ -14,6 +14,7 @@ $(function (){
         //easingcss3: 'ease',
         //hybrid: true,
         //css3: true,
+        //scrollBar: true,
         scrollingSpeed: 1200,
         slidesNavigation: true,
         scrollOverflow: true,

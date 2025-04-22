@@ -2012,6 +2012,9 @@ html,body{
         /* padding: 60px 0 0 !important; */
         box-sizing: border-box;
     }
+    .service_section_inner{
+        padding: 0;
+    }
     .service_section .service_inner .cont_box{
         flex-direction: column;
         /* position: initial; */
@@ -2023,7 +2026,10 @@ html,body{
         box-sizing: border-box;
     }
     .service_section .l_cont .nav_arrow {
-        right: 20px;
+        top: initial;
+        left: initial;
+        right: 15px;
+        bottom: 0;
     }
     .service_section .l_cont .pager_txt p{
         font-size: 22px;
@@ -2033,7 +2039,9 @@ html,body{
         width: 100%;
         box-sizing: border-box;
     }
-
+    .service_section .r_cont .navi_box .swiper_btn.prev{
+        left: 0;
+    }
     .service_section .r_cont .swiper-container{
         margin: 0 0 40px;
     }
@@ -2268,7 +2276,7 @@ html,body{
 
 
     .contact_section{
-        padding: 100px 0 20px;
+        /* padding: 100px 0 20px; */
     }
     .contact_section .contact_inner{
         flex-direction: column;
@@ -2329,17 +2337,11 @@ html,body{
 
 @media only screen and (max-width: 767px) {
 
-    /* start : MAIN PAGE */
-    main{
-        /* height: 100vh; */
-        /* height:calc(var(--vh, 1vh) * 100); */
-    }    
-
     .web_section .btn_portfolio{
         margin: 0 0 30px;
     }
     .ourway_section .set1_conts .txts p.last{
-        padding: 60px 0 400px;
+        padding: 60px 0 500px;
     }
 
 }
