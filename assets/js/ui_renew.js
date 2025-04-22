@@ -1,11 +1,11 @@
 $(function (){
 
     /* MO -> height 100vh */
-    function setScreenSize() {
-        var vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setScreenSize();
+    // function setScreenSize() {
+    //     var vh = window.innerHeight * 0.01;
+    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // }
+    // setScreenSize();
 
     $("#fullpage").fullpage({
         anchors: ["1stPage", "2cdPage", "3rdPage", "4thpage", "5thpage", "6thpage"],
@@ -205,13 +205,11 @@ $(function (){
             $(".nav_side").removeClass("on");
         }
     });
-
+    // 모바일 메뉴 클릭시 메뉴 닫기
     $(".nav_side .nav_item").on("click", function(){
-        console.log(1);
         $(".btn_hamburger").trigger("click");
     });
     
-
     $(".nav_arrow").on("click", function(){
         $(this).toggleClass("paused");
         if($(this).hasClass("paused")){
