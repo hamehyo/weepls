@@ -105,11 +105,6 @@ $(function (){
             }else if(index == 4){
                 $(".green_inner").addClass("on");
             }else if(index == 5){
-
-                console.log($(".web_inner").scrollTop());
-                
-                $('.fp-table.active .aos-init').addClass('aos-animate');
-
                 $(".web_inner").height();
             }else if(index == 6){
                 $(".contact_inner").addClass("on");
@@ -118,26 +113,7 @@ $(function (){
             
         },
 		'onLeave' : function (index, nextIndex, direction){
-            if(index == 1){
-                //$(".vd_txt_box").removeClass("on");
-            }else if(index == 2){
-
-            }else if(index == 3){
-                //$(".service_inner").removeClass("on");
-            }else if(index == 4){
-                //$(".green_inner").removeClass("on");
-            }else if(index == 5){
-                //$('.fp-table.active .aos-init').removeClass('aos-animate');
-            }else if(index == 6 && direction == 'up'){
-                //$(".contact_inner").removeClass("on");
-            }
-            /* 
-			if (index == 4 && direction == 'down'){
-				alert ('3번에서 4번으로');
-			} else if (index == 3 && direction == 'up'){
-				alert ('3번에서 2번으로');
-			}
-            */
+            
 		}
     });
 
