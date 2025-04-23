@@ -860,6 +860,7 @@ html,body{
     font-size: 36px;
     color: hsl(161, 97%, 43%);
 }
+/**/
 .web_section .web_conts_box .web_cont.business ul li:nth-child(1) dl dt{
     animation: lights 6s 0.95s linear infinite;
 }
@@ -869,6 +870,7 @@ html,body{
 .web_section .web_conts_box .web_cont.business ul li:nth-child(3) dl dt{
     animation: lights 6.5s 3.5s linear infinite;
 }
+
 @keyframes lights {
     0% {
         /* color: hsl(230, 40%, 80%); */
@@ -916,12 +918,56 @@ html,body{
     }
 }
 .web_section .web_conts_box .web_cont.business ul li dl dd{
+    position: relative;
+    overflow: hidden;
     padding: 20px 0;
     line-height: 1.4;
     font-size: 18px;
     color:#DDEDE8;
     border-top: 1px solid #fff;
 }
+.web_section .web_conts_box .web_cont.business ul li dl dd::after {
+	content: "";
+    position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    height: 1px;
+    background-color: #03D693;
+    box-shadow: 2px 0px 3px 2px rgba(3, 214, 147, 0.7), inset 0px 0px 2px rgba(3, 214, 147, 0.5);
+    z-index: 1;
+    opacity: 0;
+}
+.web_section .web_conts_box .web_cont.business ul li:nth-child(1) dl dd::after{
+    animation: move 7s ease-in-out infinite;
+} 
+.web_section .web_conts_box .web_cont.business ul li:nth-child(2) dl dd::after{
+    animation: move 7s 1s ease-in-out infinite;
+} 
+.web_section .web_conts_box .web_cont.business ul li:nth-child(3) dl dd::after{
+    animation: move 7s 2s ease-in-out infinite;
+} 
+
+
+
+
+/* .hscroll-line::after {
+	background: #FFD92A;
+	animation: move 3s infinite
+} */
+
+@keyframes move {
+	0% {
+        opacity: 0;
+		transform: translate3d(-200%, 0, 0)
+	}
+	100% {
+        opacity: 1;
+		transform: translate3d(200%, 0, 0)
+	}
+}
+
 .web_section .web_conts_box .web_cont.business ul li img{
     padding: 30px 0 20px;
     max-width: 100%;
