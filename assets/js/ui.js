@@ -37,8 +37,6 @@ $(function (){
             }
         },
 		'onLeave' : function (index, direction){
-            
-            
             if( index == 1 && direction == 2){
                 setTimeout(function(){
                     $(".vd_txt_box").removeClass("on");
@@ -107,7 +105,7 @@ $(function (){
         pagination: {
             el: '.page_scroll',
             type: 'bullets',
-            clickable: true
+            clickable: true,
         },
         navigation: {
             prevEl: '.navi_box .prev',
@@ -171,6 +169,19 @@ $(function (){
             serviceSwiper.autoplay.start();
         }
     });
+
+    $(".swiper_btn").mouseenter(function() {
+        serviceSwiper.autoplay.stop();
+        $(".nav_arrow").addClass("paused");
+        console.log('slider stopped');
+    });
+
+    $(".swiper_btn").mouseleave(function() {
+        serviceSwiper.autoplay.start();
+        $(".nav_arrow").removeClass("paused");
+        console.log('slider started again');
+    });
+
 
     // 그레이스케일모드
     $(".btn_mode").on("click", function(e){
