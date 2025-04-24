@@ -78,30 +78,11 @@ html,body{
     position: relative;
     top:0;
 }
-
-/* #wrapper{
-    overflow: hidden;
-    position: relative;
-} */
 .inner{
     margin: 0 auto;
     padding: 0 20px;
     max-width: 1080px;
 }
-/* */
-.stic_box{
-   /* position: absolute;
-    left:0;
-    bottom: 0;
-    z-index: 1;
-    position: sticky;
-    z-index: 100;
-    top: 100vh;
-    height: 1px;
-    width: 1px;
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw); */
-} 
 .btn_hp_making.greyscale{
     filter: saturate(0);
 }
@@ -158,8 +139,6 @@ html,body{
 }
 
 
-
-
 /* start : HEADER */
 #header {
     position: fixed;
@@ -174,7 +153,6 @@ html,body{
 #header.greyscale{
     filter: saturate(0);
 }
-
 .header_stic{
     position: sticky;
     z-index: 100;
@@ -203,7 +181,6 @@ html,body{
     height: 55px;
     background: url("../images/logo.png") no-repeat center/cover;
 }
-
 #header nav ul{
     display:flex;
     align-items: center;
@@ -236,10 +213,6 @@ html,body{
     font-size: 18px;
     color: #fff;
 }
-
-
-
-
 .video_section{
     position: relative;
     overflow: hidden;
@@ -272,12 +245,6 @@ html,body{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    /*margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1800px;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;*/
 }
 .video_section .vd_txt_box img{
     opacity: 0;
@@ -295,6 +262,7 @@ html,body{
 .video_section .vd_txt_box.on p{
     animation: fadeUp 0.7s 0.3s ease-in-out both;
 }
+
 
 
 .ourway_section{
@@ -358,18 +326,20 @@ html,body{
     padding: 100px 70px 0;
     max-width: 1080px;
     box-sizing: border-box;
+    opacity: 0;
+}
+.ourway_section .set1_conts.on{
+    animation: fadeUp 0.6s ease-in-out both;
 }
 .ourway_section .set1_conts .txts{
     position: relative;    
     box-sizing: border-box;
 }
-
-
 .ourway_section .set1_conts .txts::-webkit-scrollbar {
     display: none;
 }
 .ourway_section .set1_conts .txts h2{
-    padding: 200px 0 0;
+    padding: 120px 0 0;
     font-size: 20px;
     color: #fff;
     opacity: 0.5;
@@ -397,7 +367,7 @@ html,body{
     padding: 60px 0 0;
 }
 .ourway_section .set1_conts .txts p.last{
-    padding: 60px 0 700px;
+    padding: 60px 0 580px;
     color: #2BF4B4;
 }
 
@@ -583,12 +553,11 @@ html,body{
     background-color: #03D693;
 }
 .service_section .service_inner.on .cont_box .l_cont{
-    animation: fadeUp 0.5s ease-in-out both;
+    animation: fadeUp 0.8s ease-in-out both;
 }
 .service_section .service_inner.on .cont_box .r_cont{
-    animation: fadeUp 0.6s 0.5s ease-in-out both;
+    animation: fadeUp 0.8s 0.2s ease-in-out both;
 }
-
 
 
 
@@ -693,9 +662,7 @@ html,body{
 
 
 /* ------------ section 4 ------------ */
-
 .web_section{
-    /* padding: 200px 0 140px; */
     background-color: #002E88;
 }
 .web_section.greyscale{
@@ -707,6 +674,10 @@ html,body{
     max-width: 1840px;
     width: 100%;
     box-sizing: border-box;
+    opacity: 0;
+}
+.web_section .web_inner.on{
+    animation: fadeUp 0.6s ease-in-out both;
 }
 .web_section .web_tit_box{
     padding: 200px 0 0;
@@ -830,7 +801,6 @@ html,body{
     font-weight: 700;
     font-size: 36px;
     color: #DDEDE8;
-    
 }
 .web_section .web_conts_box .web_cont.business{
     padding-bottom: 150px;
@@ -860,7 +830,6 @@ html,body{
     font-size: 36px;
     color: hsl(161, 97%, 43%);
 }
-/**/
 .web_section .web_conts_box .web_cont.business ul li:nth-child(1) dl dt{
     animation: lights 6s 0.95s linear infinite;
 }
@@ -870,10 +839,8 @@ html,body{
 .web_section .web_conts_box .web_cont.business ul li:nth-child(3) dl dt{
     animation: lights 6.5s 3.5s linear infinite;
 }
-
 @keyframes lights {
     0% {
-        /* color: hsl(230, 40%, 80%); */
         color: hsl(161, 97%, 43%);
         text-shadow:
             0 0 1em hsla(320, 100%, 50%, 0.2),
@@ -881,8 +848,7 @@ html,body{
             -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
             1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
     }
-    30% { 
-        /* color: hsl(230, 80%, 90%); */
+    30% {
         color: hsl(161, 97%, 37%);
         text-shadow:
             0 0 1em hsla(320, 100%, 50%, 0.5),
@@ -890,8 +856,7 @@ html,body{
             -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
             0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
-    40% { 
-        /* color: hsl(230, 100%, 95%); */
+    40% {
         color: hsl(161, 97%, 50%);
         text-shadow:
             0 0 1em hsla(320, 100%, 50%, 0.5),
@@ -900,7 +865,6 @@ html,body{
             0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
     }
     70% {
-        /* color: hsl(230, 80%, 90%); */
         color: hsl(161, 97%, 43%);
         text-shadow:
             0 0 1em hsla(320, 100%, 50%, 0.5),
@@ -909,7 +873,6 @@ html,body{
             -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
     100% {
-        color: hsl(230, 40%, 80%);
         text-shadow:
             0 0 1em hsla(320, 100%, 50%, 0.2),
             0 0 0.125em hsla(320, 100%, 60%, 0.3),
@@ -948,15 +911,6 @@ html,body{
 .web_section .web_conts_box .web_cont.business ul li:nth-child(3) dl dd::after{
     animation: move 7s 2s ease-in-out infinite;
 } 
-
-
-
-
-/* .hscroll-line::after {
-	background: #FFD92A;
-	animation: move 3s infinite
-} */
-
 @keyframes move {
 	0% {
         opacity: 0;
@@ -967,7 +921,6 @@ html,body{
 		transform: translate3d(200%, 0, 0)
 	}
 }
-
 .web_section .web_conts_box .web_cont.business ul li img{
     padding: 30px 0 20px;
     max-width: 100%;
@@ -1004,7 +957,6 @@ html,body{
     box-sizing: border-box;
     z-index: 2;
 }
-
 @keyframes rotate1 {
     from {
         transform: rotate(0);
@@ -1131,7 +1083,6 @@ html,body{
 .web_section .web_conts_box .web_cont.team ul li:nth-child(3) .t_avata .animated-border-box-glow::before{
     animation: rotate1 4.8s 0.2s ease-in-out infinite;
 }
-
 @keyframes rotate1 {
     100% {
         transform: translate(-50%, -50%) rotate(1turn);
@@ -1328,13 +1279,8 @@ html,body{
     cursor: pointer;
 }
 .contact_section .contact_inner.on{
-    animation: fadeUp 0.4s ease-in-out both;
+    animation: fadeUp 0.6s ease-in-out both;
 }
-
-
-
-
-
 @keyframes fadeIn {
 	0%{ opacity: 0;}
 	100%{ opacity: 1;}
@@ -1366,15 +1312,11 @@ html,body{
 
 
 
-
-
 @media only screen and (max-width: 1820px) {
-
 
     #header .header_inner {
         max-width: 1460px;
     }
-
 
     .contact_section .contact_inner .map_box {
         width: calc(100% - 480px);
@@ -1386,16 +1328,15 @@ html,body{
 
 
 
-
 }
 
 
 @media only screen and (max-width: 1670px) {
 
-
     #header .header_inner {
         max-width: 1420px;
     }
+
 
     .contact_section .contact_inner .map_box {
         width: calc(100% - 430px);
@@ -1428,6 +1369,7 @@ html,body{
     #header .header_inner {
         max-width: 1280px;
     }
+
     .green_section h3 {
         padding: 0 0 60px 0;
         font-size: 38px;
@@ -1449,9 +1391,6 @@ html,body{
     }
 
 
-
-
-
 }
 
 
@@ -1465,6 +1404,7 @@ html,body{
         height: 100px;
     }
 
+
     .ourway_section .set1_conts .txts p{
         font-size: 30px;
     }
@@ -1472,6 +1412,7 @@ html,body{
         padding: 50px 0;
         font-size: 42px;
     }
+
 
     .green_section h3 {
         padding: 0 0 50px 0;
@@ -1484,6 +1425,8 @@ html,body{
         padding: 20px 0;
         font-size: 26px;
     }
+
+
 
     .service_section .l_cont {
         position: relative;
@@ -1512,7 +1455,6 @@ html,body{
         width: 560px !important;
         border-radius: 10px;
     }
-
 
 
     .web_section .web_conts_box .web_cont h4 {
@@ -1592,23 +1534,6 @@ html,body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -1631,7 +1556,6 @@ html,body{
     }
     #header .header_inner {
         padding: 0 0 0 20px;
-        /* max-width: 1080px; */
     }
     .btn_hp_making{
         bottom: 0;
@@ -1651,8 +1575,6 @@ html,body{
         height: 13px;
     }
     .btn_mode{
-        /* top: -105px;
-        left: calc(100vw - 100px); */
         width: 60px;
         height: 60px;
     }
@@ -2030,9 +1952,11 @@ html,body{
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info dd p{
         padding-bottom: 5px;
     }
-
     .web_section .web_conts_box .web_cont.team ul li .t_infos .t_info.first {
         padding: 0 0 15px 0;
+    }
+    .web_section .btn_portfolio{
+        margin:0 auto 60px;
     }
 
 
@@ -2079,12 +2003,6 @@ html,body{
         padding: 14px 0;
         font-size: 16px;
     }
-    .web_section .btn_portfolio{
-        margin:0 auto 60px;
-    }
-
-
-
 
 
 
@@ -2093,9 +2011,11 @@ html,body{
 
 @media only screen and (max-width: 767px) {
 
+
     .web_section .btn_portfolio{
         margin: 0 0 30px;
     }
+    
     .ourway_section .set1_conts .txts p.last{
         padding: 60px 0 500px;
     }

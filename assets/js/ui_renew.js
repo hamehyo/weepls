@@ -19,15 +19,13 @@ $(function (){
         scrollOverflow: true,
         scrollOverflowReset: true,
         scrollOverflowResetKey: 'MVVZV3gyWVhKdmRISnBaMjh1WTI5dEtNX25RVWMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT05SzI=',
-        normalScrollElements:'footer',
         afterLoad: function( destination, index){
             if(index == 1){
                 $(".vd_txt_box").addClass("on");
-            }else if( index == 2 ){
-
+            }else if(index == 2){
+                $(".set1_conts").addClass("on");
             }else if( index == 3 ){
                 $(".service_inner").addClass("on");
-
                 // core service 슬라이드 영역
                 var serviceSwiper = new Swiper(".service_inner .r_cont .swiper-container", {
                     loop:true,
@@ -81,7 +79,14 @@ $(function (){
                         },
                     },
                 });
-
+                $(".nav_arrow").on("click", function(){
+                    $(this).toggleClass("paused");
+                    if($(this).hasClass("paused")){
+                        serviceSwiper.autoplay.stop();
+                    }else{
+                        serviceSwiper.autoplay.start();
+                    }
+                });
                 $(".slide_menu.menu01").on("click", function(){
                     serviceSwiper.slideTo(0);
                 });
@@ -94,26 +99,69 @@ $(function (){
                 $(".slide_menu.menu04").on("click", function(){
                     serviceSwiper.slideTo(4);
                 });
-
                 // pagination indicator
                 var $dotList = $(".r_cont .swiper-pagination-bullet");
                 var dotCnt = $dotList.length;
                 $dotList.each(function(){
                     $(this).attr("style", "width:"+(100/dotCnt).toFixed(3)+"%;");
                 });
-
             }else if(index == 4){
                 $(".green_inner").addClass("on");
             }else if(index == 5){
-                $(".web_inner").height();
+                $(".web_inner").addClass("on");
             }else if(index == 6){
                 $(".contact_inner").addClass("on");
             }
-            
-            
         },
-		'onLeave' : function (index, nextIndex, direction){
-            
+		'onLeave' : function (index, direction){
+            if( index == 1 && direction == 2){
+                setTimeout(function(){
+                    $(".vd_txt_box").removeClass("on");
+                }, 800);
+            }
+
+            if( index == 2 && direction == 1 ){
+                setTimeout(function(){
+                    $(".set1_conts").removeClass("on");
+                }, 800);
+            }
+
+            if( index == 3 && direction == 4){
+                setTimeout(function(){
+                    $(".service_inner").removeClass("on");
+                }, 800);
+            }else if( index == 3 && direction == 2 ){
+                setTimeout(function(){
+                    $(".service_inner").removeClass("on");
+                }, 800);
+            }
+
+            if ( index == 4 && direction == 5 ){
+                setTimeout(function(){
+                    $(".green_inner").removeClass("on");
+                }, 800);
+			} else if ( index == 4 && direction == 3 ){
+                setTimeout(function(){
+                    $(".green_inner").removeClass("on");
+                }, 800);
+			}
+
+            if ( index == 5 && direction == 6){
+                setTimeout(function(){
+                    $(".web_inner").removeClass("on");
+                }, 800);
+			} else if ( index == 5 && direction == 4 ){
+                setTimeout(function(){
+                    $(".web_inner").removeClass("on");
+                }, 800);
+			}
+
+            if ( index == 6 && direction == 5 ){
+                setTimeout(function(){
+                    $(".contact_inner").removeClass("on");
+                }, 800);
+			}
+
 		}
     });
 
@@ -185,14 +233,7 @@ $(function (){
         $(".btn_hamburger").trigger("click");
     });
     
-    $(".nav_arrow").on("click", function(){
-        $(this).toggleClass("paused");
-        if($(this).hasClass("paused")){
-            serviceSwiper.autoplay.stop();
-        }else{
-            serviceSwiper.autoplay.start();
-        }
-    });
+
 
 
 
