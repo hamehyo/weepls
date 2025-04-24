@@ -173,13 +173,13 @@ $(function (){
     $(".swiper_btn").mouseenter(function() {
         serviceSwiper.autoplay.stop();
         $(".nav_arrow").addClass("paused");
-        console.log('slider stopped');
+        //console.log('slider stopped');
     });
 
     $(".swiper_btn").mouseleave(function() {
         serviceSwiper.autoplay.start();
         $(".nav_arrow").removeClass("paused");
-        console.log('slider started again');
+        //console.log('slider started again');
     });
 
 
