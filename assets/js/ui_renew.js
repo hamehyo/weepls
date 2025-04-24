@@ -137,10 +137,12 @@ $(function (){
             if( index == 3 && direction == 4){
                 setTimeout(function(){
                     $(".service_inner").removeClass("on");
+                    $(".nav_arrow").removeClass("paused");
                 }, 800);
             }else if( index == 3 && direction == 2 ){
                 setTimeout(function(){
                     $(".service_inner").removeClass("on");
+                    $(".nav_arrow").removeClass("paused");
                 }, 800);
             }
 
